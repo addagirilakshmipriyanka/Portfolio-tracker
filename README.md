@@ -11,8 +11,6 @@ The Simple Portfolio Tracker app helps users manage their stock investments by a
 portfolio value in real-time, updating with live stock prices. The app features a dashboard that provides key metrics like total value, top-performing stocks, and 
 portfolio distribution. Users can easily analyze their investment performance and make informed decisions. The intuitive interface ensures seamless tracking of 
 all portfolio activities.
-Deployment
-Deployed using Heroku
 
 ## steps to run the project
 Run the following commands:
