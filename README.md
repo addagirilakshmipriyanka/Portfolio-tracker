@@ -33,12 +33,23 @@ Stylelint Stylelint – Code Review
 Bootsnap Bootsnap – Ruby Utilities
 GitHub Actions GitHub Actions – Continuous Integration
 
-## Usage
+## Live demo
+Portfolio tracker
+
+## Deployment
+Deployed using Heroku
+
+## steps to run the project
 Run the following commands:
+
 https://github.com/addagirilakshmipriyanka/Portfolio-tracker/tree/master
+
 cd Portfolio-tracker
+
 bundle install
+
 rails s
+
 Open a browser and go to: https://localhost:3000 to view the app.
 
 ## Database setup
