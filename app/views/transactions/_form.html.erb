@@ -1,0 +1,93 @@
+<%= form_with(model: transaction,
+  url: "/users/#{current_user.id}/portfolios/#{params[:portfolio_id]}/transactions/",
+  class: "contents", data: { controller: 'forms'}) do |form| %>
+  <% if transaction.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+      <ul>
+        <% transaction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% field_style = "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="my-5">
+    <label for="transaction_tr_type"></label>
+    <%= form.select :tr_type, [["Transaction type", ''],
+      ['Buy', 'Buy'],
+      ['Sell', 'Sell'],
+      ['Sell short', 'Sell short'],
+      ['Buy to cover', 'Buy to cover'],
+      ['Cash In', 'Cash In'],
+      ['Cash Out', 'Cash Out'],
+      ['Interest Inc.', 'Interest Inc.'],
+      ['Misc. Exp.', 'Misc. Exp.'],
+      ['Dividend ***', 'Dividend'],
+      ['Reinvest Div. ***', 'Reinvest Div.'],
+      ['Stock Split ***', 'Stock Split'],
+      ['Symbol Change ***', 'Symbol Change'],
+      ['Shares in **', 'Shares in'],
+      ['Shares out', 'Shares out']],
+      class:"#{field_style} text-red-800", required: true %>
+      <sup class="block-inline text-red-600 text-lg ml-1"> **, ***</sup>
+  </div>
+
+  <div class="my-5">
+    <%= form.date_field :trade_date, value: Date.today,
+      class: "#{field_style}",
+      required: true, placeholder:"Trade date" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.text_field :symbol, class: "#{field_style}", required: true, placeholder:"Symbol" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.text_field :new_symbol, class: "#{field_style} hidden", placeholder:"New Symbol" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.number_field :quantity, min: 0.001, step: 0.001, class: "#{field_style}", required: true, placeholder:"Quantity" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.number_field :new_shares, class: "#{field_style} hidden", placeholder:"New shares ratio" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.number_field :old_shares, class: "#{field_style} hidden", placeholder:"Old shares ratio" %>
+  </div>
+
+  <div class="my-5" id="price-div">
+    <%= form.number_field :price, min: 0.000001, step: 0.000001, class: "#{field_style}", required: true, placeholder:"Price" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.number_field :div_per_share, min: 0.000001, step: 0.000001, class: "#{field_style} hidden", placeholder:"Dividend per share" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.number_field :closing_price, min: 0.01, step: 0.01, class: "#{field_style} hidden", placeholder:"Closing price before dividend's day" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.number_field :commission, min: 0, step: 0.01, class: "#{field_style}", placeholder:"Commission" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.number_field :fee, min: 0, step: 0.01, class: "#{field_style}", placeholder:"Fee" %>
+  </div>
+
+  <%= form.hidden_field :portfolio_id, value: @portfolio.id %>
+
+  <div class="mt-5">
+    <div class="text-xs font-semibold text-red-600 leading-3">* All transactions have to be recorded chronologicaly.</div>
+    <div class="text-xs font-semibold text-red-600 leading-3">** Enter 0 for 'Average price per share' if received as a gift or matching shares.</div>
+    <div class="text-xs font-semibold text-red-600 leading-3">*** Must be entered in each portfolio, which holds the same stock separetely.</div>
+  </div>
+
+  <div class="flex justify-center">
+    <%= form.submit class: "mt-8 rounded-lg py-1 px-3 bg-dollar-split_blue inline-block font-medium text-white hover:bg-dollar-triad_blue" %>
+  </div>
+<% end %>
