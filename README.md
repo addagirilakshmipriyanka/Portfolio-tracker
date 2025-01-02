@@ -40,7 +40,7 @@ The app is not optimized for mobile devices.
 No historical data analysis or trends available.
 
 ## deployment
-Deployed using <u>Heroku</u>
+
 
 ## Version
 latest version: 1.5.6
