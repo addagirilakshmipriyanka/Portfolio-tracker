@@ -49,5 +49,6 @@ rails db:drop db:create db:migrate
 
 ## Testing
 cd Portfolio-tracker
+
 run rspec
 
