@@ -35,7 +35,7 @@ GitHub Actions GitHub Actions – Continuous Integration
 
 ## Usage
 Run the following commands:
-https://github.com/addagirilakshmipriyanka/Portfolio-tracker
+https://github.com/addagirilakshmipriyanka/Portfolio-tracker/tree/master
 cd Portfolio-tracker
 bundle install
 rails s
