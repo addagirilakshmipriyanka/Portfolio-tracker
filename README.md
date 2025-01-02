@@ -20,9 +20,7 @@ https://github.com/addagirilakshmipriyanka/Portfolio-tracker/tree/master
 cd Portfolio-tracker
 
 bundle install
-
 rails s
-
 Open a browser and go to: https://localhost:3000 to view the app.
 
 ## Assumptions
