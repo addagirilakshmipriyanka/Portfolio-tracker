@@ -37,9 +37,6 @@ No support for taxes, fees, or portfolio rebalancing.
 The app is not optimized for mobile devices.
 No historical data analysis or trends available.
 
-## deployment
-
-
 ## Version
 latest version: 1.5.6
 
