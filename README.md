@@ -1,4 +1,4 @@
-# Portfolio-tracker
+## Portfolio-tracker
 A Simple Portfolio Tracker application that allows users to:
 1. Add, view, edit, and delete stock holdings.
 2. Track the total portfolio value based on real-time stock prices.
@@ -14,31 +14,6 @@ all portfolio activities.
 Deployment
 Deployed using Heroku
 
-## Version
-latest version: 1.5.6
-
-## addagirilakshmipriyanka
-Portfolio-tracker is built on the following main stack:
-
-Twilio SendGrid Twilio SendGrid – Transactional Email
-Ruby Ruby – Languages
-Rails Rails – Frameworks (Full Stack)
-PostgreSQL PostgreSQL – Databases
-Puma Puma – Web Servers
-JavaScript JavaScript – Languages
-Devise Devise – User Management and Authentication
-OmniAuth OmniAuth – User Management and Authentication
-Shell Shell – Shells
-Stylelint Stylelint – Code Review
-Bootsnap Bootsnap – Ruby Utilities
-GitHub Actions GitHub Actions – Continuous Integration
-
-## Live demo
-Portfolio tracker
-
-## Deployment
-Deployed using Heroku
-
 ## steps to run the project
 Run the following commands:
 
@@ -51,6 +26,26 @@ bundle install
 rails s
 
 Open a browser and go to: https://localhost:3000 to view the app.
+
+## Assumptions
+
+Users can add, view, edit, and delete stock holdings.
+Real-time stock prices are fetched from an external API.
+The app tracks portfolio value, top-performing stocks, and distribution.
+Only stocks are supported; no other asset types like bonds or cryptocurrencies.
+
+## Limitations
+
+Real-time data may be delayed depending on the API used.
+No support for taxes, fees, or portfolio rebalancing.
+The app is not optimized for mobile devices.
+No historical data analysis or trends available.
+
+## deployment
+Deployed using <u>Heroku</u>
+
+## Version
+latest version: 1.5.6
 
 ## Database setup
 To start with clean database use:
